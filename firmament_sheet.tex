@@ -1,0 +1,48 @@
+\documentclass[11pt]{standalone}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage{fontspec}
+\usepackage{unicode-math}
+\setmathfont{Tex Gyre Schola Math}
+%\usepackage{cornerwars}
+\usepackage[type={CC}, version={4.0}, modifier={by-sa}]{doclicense} % Add text and icons for creative commons license
+
+\begin{document}
+\begin{tikzpicture}
+
+%\foreach \i in {-2.6, -2.2, -1.8, -1.4, -1.0, -0.6, -0.2, 0.2, 0.6, 1.0, 1.4, 1.8, 2.2, 2.6} {
+%	\draw[very thick] (\i in, -2.6in) -- (\i in, 2.6in);
+%	\draw[very thick] (-2.6in, \i in) -- (2.6in, \i in);
+%}
+
+\foreach \i in {-2.6, -1.8, -1.0, -0.2, 0.6, 1.4, 2.2}
+	\foreach \j in {-2.6, -1.8, -1.0, -0.2, 0.6, 1.4, 2.2}
+		\node[draw, ultra thick, fill=white, minimum width=0.4in, minimum height=0.4in, inner sep=0pt] at (\i in, \j in) {};
+
+\foreach \i in {-2.2, -1.4, -0.6, 0.2, 1.0, 1.8, 2.6}
+	\foreach \j in {-2.2, -1.4, -0.6, 0.2, 1.0, 1.8, 2.6}
+		\node[draw, ultra thick, fill=white, minimum width=0.4in, minimum height=0.4in, inner sep=0pt] at (\i in, \j in) {};
+
+\foreach \i in {-2.6, -1.8, -1.0, -0.2, 0.6, 1.4, 2.2}
+	\foreach \j in {-2.2, -1.4, -0.6, 0.2, 1.0, 1.8, 2.6}
+		\node[draw, ultra thick, fill=lightgray, minimum width=0.4in, minimum height=0.4in, inner sep=0pt] at (\i in, \j in) {};
+
+\foreach \i in {-2.2, -1.4, -0.6, 0.2, 1.0, 1.8, 2.6}
+	\foreach \j in {-2.6, -1.8, -1.0, -0.2, 0.6, 1.4, 2.2}
+		\node[draw, ultra thick, fill=lightgray, minimum width=0.4in, minimum height=0.4in, inner sep=0pt] at (\i in, \j in) {};
+
+\node[draw,line width=0.72mm,minimum width=5.6in,minimum height=5.6in] at (0in,0in) {};
+
+\node at (0,3.45in) {\setmainfont[Scale=2.5]{Century Gothic-Bold} \Huge Firmament};
+\node at (-4.25in, 3.45in) {\includegraphics[width=6cm]{shooting_stars.png}};
+\node[xscale=-1] at (4.25in, 3.45in) {\includegraphics[width=6cm]{shooting_stars.png}};
+
+\node[rotate=180] at (0,-3.45in) {\setmainfont[Scale=2.5]{Century Gothic-Bold} \Huge Firmament};
+\node[yscale=-1] at (-4.25in, -3.45in) {\includegraphics[width=6cm]{shooting_stars.png}};
+\node[xscale=-1, yscale=-1] at (4.25in, -3.45in) {\includegraphics[width=6cm]{shooting_stars.png}};
+
+\node[rotate=180] at (4.25in, 0) {\input{rules_text.tex}};
+\node at (-4.25in, 0) {\input{rules_text.tex}};
+\path (-148.5mm, -105mm) -- (148.5mm, 105mm);
+\end{tikzpicture}
+\end{document}
